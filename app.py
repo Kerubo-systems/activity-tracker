@@ -6,28 +6,20 @@ Created on Tue Mar 17 16:15:57 2026
 """
 
 """
-This is a command-line app(basically no icons) for planning and productivity purposes
+Activity Tracker CLI App
+------------------------
+This is a command-line app (basically no icons) for planning and productivity purposes.
+
 It lets a user:
-    1. add tasks
-    2. track study sessions
-    3. set goals
-    4. view progress
-    5. save/load data from a file
+    1. Add tasks
+    2. Track study sessions
+    3. Set goals
+    4. View progress
+    5. Save/load data from a file
 """
 
-# I'm doing this because I love to code and be organized as well. 
-# Primarily for fun and I haven't coded in a while too.
-# So let's get started. (Day format: DD/MM/YYYY)
-
-#Day 1(17/03/2026): ...I'm wondering whether this should be in a README file.
-"""
-I can't believe I haven't started coding. Still comments!!
-Today's goal:
-    - Program should let the user:
-        1. Add a task
-        2. View tasks
-        3. Mark tasks as complete.
-"""
+# Motivation: I love coding and being organized.
+# Doing this primarily for fun and practice after a coding break.
 
 # Menu Loop
 
@@ -45,8 +37,6 @@ def show_menu():
 
         choice = int(input("Choose an option. "))
         
-            
-
         if choice == 1:
             print("Adding Task...")
             title = input("What is the title to your class? ")
@@ -58,10 +48,9 @@ def show_menu():
 
             tasks.append(task)
 
-
         elif choice == 2:
             print("Viewing Tasks...")
-            if len(tasks) <= 0:
+            if len(tasks) <= 0:               #thinking of updating this later to alert the user that neg integers are invalid
                 print("No tasks available.")
             
             else:
@@ -80,7 +69,7 @@ def show_menu():
                 TaskNo = int(input("What task would you want to mark complete? "))
                 index = TaskNo - 1
                 
-                if 0 <= index < len(tasks):
+                if 0 <= index < len(tasks):      #controls parameters for indexing and slicing
                      tasks[index]["completed"] = True
                      print(f"Marking task {TaskNo} complete!")
                 
