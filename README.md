@@ -5,7 +5,7 @@ Created on Sun Mar 22 15:28:21 2026
 @author: godfr
 """
 
-# 📚 Smart Study Tracker (CLI App)
+# 📚 Smart Activity Tracker (CLI App)
 
 ## 🚀 Overview
 
