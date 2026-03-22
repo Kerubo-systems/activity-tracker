@@ -24,6 +24,7 @@ It lets a user:
 # Menu Loop
 
 tasks = []
+sessions = []
 
 def show_menu():
     while True:
@@ -32,7 +33,9 @@ def show_menu():
         print("1. Add Task")
         print("2. View Tasks")
         print("3. Mark Task Complete")
-        print("4. Exit")
+        print("4. Log Study Session")
+        print("5. View Study Summary")
+        print("6. Exit")
         
 
         choice = int(input("Choose an option. "))
@@ -75,9 +78,57 @@ def show_menu():
                 
                 else:
                     print("Invalid task number.")
-            
-        
+                    
         elif choice == 4:
+            subject = input("Enter subject name: ")
+            duration = int(input("Enter duration (minutes): "))
+            
+            if duration <= 0:
+                print("Come on! Even a minute🥺: ")
+                continue
+            
+            session = {
+                "subject": subject,
+                "duration": duration
+                }
+            
+           
+            sessions.append(session)
+            
+        # Study summary
+        elif choice == 5:
+            print("Viewing Study Summary...")
+            
+            if len(sessions) <= 0:
+                print("No sessions available.")
+                
+            else:
+                #SUBJECT TOTALS
+                subject_totals = {}
+                
+                
+                for session in sessions:
+                   sub = session["subject"]
+                   time = session["duration"]
+                   
+                   if sub not in subject_totals:
+                       subject_totals[sub] = time
+                   else:
+                        subject_totals[sub] += time
+                    
+                for subject, time in sorted(subject_totals.items(), key = lambda x:x[1], reverse = True):
+                    print(f"{subject}: {time} minutes")
+                    
+                    
+                #TOTAL TIME
+                total_time = 0
+                
+                for session in sessions:
+                    total_time += session["duration"]
+                
+                print(f"Your total study time today was: {total_time} minutes")
+            
+        elif choice == 6:
             print("Exiting...")
             break
         
