@@ -34,10 +34,10 @@ python app.py
 
 ## 🎯 Future Improvements
 
-* Study session tracking
-* Data persistence (JSON)
-* Progress analytics
-* Graphs using matplotlib
+* Study session tracking✅
+* Data persistence (JSON)✅
+* Progress analytics (In progress)
+* Graphs using matplotlib (Not yet started)
 
 ## 👩🏽‍💻 Author
 
