@@ -72,6 +72,13 @@ I should come back knowing what a JSON module is and how it works, and of course
 
 [after some time...]
 
-
+JSON = JavaScript Object Notation
+Honestly, it's much simpler than I thought.
+What I realised that I needed to have done earlier is how to Python File Handling.
+The only new thing that came with json, were the functions 'json.dump()' and "json.load()"
+Anyway, I learn't of a new module 'os'.
+Day 3 ended on 24/03/2026: a day later!😅
+But each day, we get better!
+(Psst! I'm super impressed by JSON application)
 
 """

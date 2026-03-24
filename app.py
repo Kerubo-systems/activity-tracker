@@ -23,12 +23,30 @@ It lets a user:
 
 # Menu Loop
 
+import json
+import os
+
 tasks = []
 sessions = []
 
+
+def save_data():
+    with open("sessions.json","w") as s:
+        json.dump(sessions, s, indent=4)
+    with open("tasks.json", "w") as t:
+        json.dump(tasks, t, indent=4)
+        
+def load_data():
+    if os.path.exists("sessions.json") and os.path.exists("tasks.json"):
+        global sessions, tasks
+        with open ("sessions.json", "r") as s:
+            sessions = json.load(s)
+        with open("tasks.json", "r") as t:
+            tasks= json.load(t)
+
 def show_menu():
     while True:
-
+       
         print("\n---Study Tracker---")
         print("1. Add Task")
         print("2. View Tasks")
@@ -37,12 +55,11 @@ def show_menu():
         print("5. View Study Summary")
         print("6. Exit")
         
-
         choice = int(input("Choose an option. "))
         
         if choice == 1:
             print("Adding Task...")
-            title = input("What is the title to your class? ")
+            title = input("What is the title to your task? ")
 
             task = {
                 "title": title,
@@ -50,6 +67,7 @@ def show_menu():
             }
 
             tasks.append(task)
+            save_data()
 
         elif choice == 2:
             print("Viewing Tasks...")
@@ -78,6 +96,7 @@ def show_menu():
                 
                 else:
                     print("Invalid task number.")
+            save_data()
                     
         elif choice == 4:
             subject = input("Enter subject name: ")
@@ -94,6 +113,7 @@ def show_menu():
             
            
             sessions.append(session)
+            save_data()
             
         # Study summary
         elif choice == 5:
@@ -129,6 +149,7 @@ def show_menu():
                 print(f"Your total study time today was: {total_time} minutes")
             
         elif choice == 6:
+            save_data()
             print("Exiting...")
             break
         
@@ -136,4 +157,7 @@ def show_menu():
             print("Invalid choice. Try again.")
             
 
+
+load_data()
 show_menu()
+

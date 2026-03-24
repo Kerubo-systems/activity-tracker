@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Drink water",
+        "completed": false
+    },
+    {
+        "title": "Read a book",
+        "completed": true
+    },
+    {
+        "title": "Exercise",
+        "completed": false
+    }
+]
