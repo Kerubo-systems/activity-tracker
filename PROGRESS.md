@@ -7,11 +7,11 @@ It lets a user:
     5. save/load data from a file
 """
 
-# I'm doing this because I love to code and be organized as well. 
-# Primarily for fun and I haven't coded in a while too.
-# So let's get started. (Day format: DD/MM/YYYY)
+I'm doing this because I love to code and be organized as well. 
+Primarily for fun and I haven't coded in a while too.
+So let's get started. (Day format: DD/MM/YYYY)
 
-# Day 1(17/03/2026): ...I'm wondering whether this should be in a README file.
+## Day 1(17/03/2026): ...I'm wondering whether this should be in a README file.
 """
 I can't believe I haven't started coding. Still comments!!
 Today's goal:
@@ -20,7 +20,7 @@ Today's goal:
         2. View tasks
         3. Mark tasks as complete.
 
-END OF DAY 1:
+### END OF DAY 1:
   - Reflection: Learning concepts versus putting them into practice are two different things. However, not so different.(wondering why this is in white?!)
   - I have better understanding on dictionaries now...something that previously was daunting.
   - I need to work on my commitment. It was a week from Day 1 to day 2.
@@ -29,7 +29,7 @@ END OF DAY 1:
 OK!!! Mission DAY 2 IS A GO!
 """
 
-# Day 2(22/03/2026): 
+## Day 2(22/03/2026): 
 """
 Today's goal is to add generally add a time element. Like how many hours per session of activities. Number of total hours...etc
 As inspired by Notion, an organizing app, the app will allow the user to:
@@ -41,7 +41,7 @@ Let's see how this goes. (It's like 3am by the way...but who's counting. Let's g
 
 ...
 
-Okay, so day 2 was not that bad. It was a bit easier.
+### Okay, so day 2 was not that bad. It was a bit easier.
 SKILL REFLECTION:
     - I realosed I'm confusing the functions associated with lists with those of dictionaries, eg adding stuff to la list vs adding stuff to a dictionary.
     - I'm thinking of doing more projects to practise on the aforementioned.
@@ -54,7 +54,7 @@ I think I wanna make it more interactive...
 
    
 """
-# Day 3(23/03/2026):
+## Day 3(23/03/2026):
 """
 I'm thinking of renaming my day-2 branch to 'mods' or 'changes' because that's where I do all the modification work before merging with the main to avoid crashing everything.
 
