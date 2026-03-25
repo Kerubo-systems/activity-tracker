@@ -1,5 +1,5 @@
-This is a command-line app(basically no icons) for planning and productivity purposes.
-It lets a user:
+### This is a command-line app(basically no icons) for planning and productivity purposes.
+#### It lets a user:
      * add tasks
      * track study sessions
      * set goals
