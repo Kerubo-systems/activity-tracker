@@ -1,10 +1,10 @@
 This is a command-line app(basically no icons) for planning and productivity purposes.
 It lets a user:
-    * add tasks
-    * track study sessions
-    * set goals
-    * view progress
-    * save/load data from a file
+     * add tasks
+     * track study sessions
+     * set goals
+     * view progress
+     * save/load data from a file
 """
 
 I'm doing this because I love to code and be organized as well. 
