@@ -5,14 +5,13 @@ It lets a user:
      * set goals
      * view progress
      * save/load data from a file
-"""
 
 I'm doing this because I love to code and be organized as well. 
 Primarily for fun and I haven't coded in a while too.
 So let's get started. (Day format: DD/MM/YYYY)
 
 ## Day 1(17/03/2026): ...I'm wondering whether this should be in a README file.
-"""
+
 I can't believe I haven't started coding. Still comments!!
 Today's goal:
     - Program should let the user:
@@ -27,10 +26,10 @@ Today's goal:
   - I decided to create a PROGRESS file to journal my thoughts, not to clatter the README and code for professionalism. ( I LOVE TO TALK!!!)
 
 OK!!! Mission DAY 2 IS A GO!
-"""
+
 
 ## Day 2(22/03/2026): 
-"""
+
 Today's goal is to add generally add a time element. Like how many hours per session of activities. Number of total hours...etc
 As inspired by Notion, an organizing app, the app will allow the user to:
    * 1. Log study sessions (subject + time)
@@ -53,9 +52,9 @@ I think I wanna make it more interactive...
     - But we're moving well. (By 'we' I mean: me, myself and I😅. But hopefully in the near future, I'll be able to expand this network.)
 
    
-"""
+
 ## Day 3(23/03/2026):
-"""
+
 I'm thinking of renaming my day-2 branch to 'mods' or 'changes' because that's where I do all the modification work before merging with the main to avoid crashing everything.
 
 Today's objective is to:
