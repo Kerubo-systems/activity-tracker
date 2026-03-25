@@ -1,10 +1,10 @@
-This is a command-line app(basically no icons) for planning and productivity purposes
+This is a command-line app(basically no icons) for planning and productivity purposes.
 It lets a user:
-    1. add tasks
-    2. track study sessions
-    3. set goals
-    4. view progress
-    5. save/load data from a file
+    * add tasks
+    * track study sessions
+    * set goals
+    * view progress
+    * save/load data from a file
 """
 
 I'm doing this because I love to code and be organized as well. 
@@ -59,9 +59,9 @@ I think I wanna make it more interactive...
 I'm thinking of renaming my day-2 branch to 'mods' or 'changes' because that's where I do all the modification work before merging with the main to avoid crashing everything.
 
 Today's objective is to:
-    1. Save tasks and sessions into a file
-    2. Load them when the app starts
-    3. Use JSON 
+    * Save tasks and sessions into a file
+    * Load them when the app starts
+    * Use JSON 
          (
             Because:
                - Handles dictionaries and lists more easily according to w3schools.com
