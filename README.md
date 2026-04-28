@@ -28,6 +28,13 @@ This is a command-line Python application that helps users:
 * View study summary (total time per subject, overall total)
 * Data saved/loaded automatically using JSON
 
+### 📊 Features (Day 3)
+
+* Date tracking for study sessions
+* Daily study analytics
+* View today's sessions
+* Delete tasks and sessions
+
 ## 🛠️ Technologies Used
 
 * Python (Core concepts: loops, functions, lists, dictionaries)
@@ -42,7 +49,7 @@ python app.py
 
 * Study session tracking✅
 * Data persistence (JSON)✅
-* Progress analytics (In progress)
+* Progress analytics✅
 * Graphs using matplotlib (Not yet started)
 
 ## 👩🏽‍💻 Author
