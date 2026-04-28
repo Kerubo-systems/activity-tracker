@@ -25,6 +25,7 @@ It lets a user:
 
 import json
 import os
+from datetime import date
 
 tasks = []
 sessions = []
@@ -53,9 +54,12 @@ def show_menu():
         print("3. Mark Task Complete")
         print("4. Log Study Session")
         print("5. View Study Summary")
-        print("6. Exit")
+        print("6. Delete Tasks")
+        print("7. Delete Study Session")
+        print("8. Exit")
         
         choice = int(input("Choose an option. "))
+        
         
         if choice == 1:
             print("Adding Task...")
@@ -101,6 +105,8 @@ def show_menu():
         elif choice == 4:
             subject = input("Enter subject name: ")
             duration = int(input("Enter duration (minutes): "))
+            day = date.today().isoformat()
+            
             
             if duration <= 0:
                 print("Come on! Even a minute🥺: ")
@@ -108,7 +114,8 @@ def show_menu():
             
             session = {
                 "subject": subject,
-                "duration": duration
+                "duration": duration,
+                "date": day
                 }
             
            
@@ -130,6 +137,8 @@ def show_menu():
                 for session in sessions:
                    sub = session["subject"]
                    time = session["duration"]
+                  
+
                    
                    if sub not in subject_totals:
                        subject_totals[sub] = time
@@ -138,6 +147,7 @@ def show_menu():
                     
                 for subject, time in sorted(subject_totals.items(), key = lambda x:x[1], reverse = True):
                     print(f"{subject}: {time} minutes")
+
                     
                     
                 #TOTAL TIME
@@ -146,9 +156,80 @@ def show_menu():
                 for session in sessions:
                     total_time += session["duration"]
                 
-                print(f"Your total study time today was: {total_time} minutes")
-            
+                print(f"Your total study time (all-time) was: {total_time} minutes")
+                
+                print("\n All Study Sessions:")
+                for n,session in enumerate(sessions):
+                    sub = session["subject"]
+                    time = session["duration"]
+                    day = session.get("date", "No date")
+                    
+                    print(f"{n+1}. {sub}: {time} minutes ({day})")
+                    
+                    
+                #Today's time
+                total_today = 0
+                today_date = date.today().isoformat()
+                
+                for session in sessions:
+                    if session.get("date") == today_date:
+                        total_today += session["duration"]
+                        
+                print(f"Total study time today was: {total_today} minutes.")
+                
+                print("\nToday's sessions were:")
+                for session in sessions:
+                    if session.get("date") == today_date:
+                        sub = session["subject"]
+                        time = session["duration"]
+                        day = session.get("date", "No date")
+                        
+                        print(f"{sub}: {time} minutes.")
+                        
         elif choice == 6:
+            print("Task Deletion...")
+            for n,task in enumerate(tasks):
+                status = "✅" if task["completed"] else "❌"
+                print(f"{n+1}. {task['title']} [{status}]")
+            
+            task_no = int(input("What task (by number) do you wanna delete? "))
+            task_no -= 1
+            
+            if not (0 <= task_no < len(tasks)):
+               print("Invalid choice")
+            else:
+                t = tasks[task_no]
+                print(f"Deleting: {t['title']} ({'✅' if t['completed'] else '❌'})")
+                tasks.pop(task_no)
+               
+            save_data()
+                
+                
+        elif choice == 7:
+            print("Study Session Deletion...")
+            
+            for n, session in enumerate(sessions):
+                sub = session['subject']
+                time = session['duration']
+                day = session.get('date', 'No date')
+                
+                
+                print(f"{n+1}. {sub}: {time} min ({day})")
+            
+            session_no = int(input("What study session by number would you want to delete? "))
+            session_no -= 1
+            
+            if not (0 <= session_no < len(sessions)):
+                print("Invalid choice")
+            else:
+                s = sessions[session_no]
+                print(f"Deleting: {s['subject']} - {s['duration']} min ({s.get('date', 'No date')})")
+                sessions.pop(session_no)
+               
+            save_data()
+            
+            
+        elif choice == 8:
             save_data()
             print("Exiting...")
             break
