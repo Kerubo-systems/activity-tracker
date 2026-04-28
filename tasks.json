@@ -4,11 +4,7 @@
         "completed": false
     },
     {
-        "title": "Read a book",
-        "completed": true
-    },
-    {
         "title": "Exercise",
-        "completed": false
+        "completed": true
     }
 ]

@@ -6,5 +6,15 @@
     {
         "subject": "Swahili",
         "duration": 40
+    },
+    {
+        "subject": "swa",
+        "duration": 10,
+        "date": "03/30/26"
+    },
+    {
+        "subject": "sst",
+        "duration": 10,
+        "date": "2026-03-30"
     }
 ]
