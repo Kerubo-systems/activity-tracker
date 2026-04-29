@@ -16,5 +16,25 @@
         "subject": "sst",
         "duration": 10,
         "date": "2026-03-30"
+    },
+    {
+        "subject": "Biology",
+        "duration": 25,
+        "date": "2026-04-28"
+    },
+    {
+        "subject": "Math",
+        "duration": 30,
+        "date": "2026-04-29"
+    },
+    {
+        "subject": "swa",
+        "duration": 30,
+        "date": "2026-04-29"
+    },
+    {
+        "subject": "Chem",
+        "duration": 50,
+        "date": "2026-04-30"
     }
 ]

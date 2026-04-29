@@ -6,5 +6,9 @@
     {
         "title": "Exercise",
         "completed": true
+    },
+    {
+        "title": "Run a mile",
+        "completed": false
     }
 ]

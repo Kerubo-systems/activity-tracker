@@ -15,12 +15,18 @@ This is a command-line Python application that helps users:
 * Monitor study progress
 * Stay productive
 
-## 🧠 Features (Day 1)
+## 🧠 Features 
+### (Day 1)
 
 * Add tasks
 * View tasks
 * Mark tasks as complete
 * Interactive menu system
+
+### (Day 2)
+* Log study sessions (subject + duration)
+* View study summary (total time per subject, overall total)
+* Data saved/loaded automatically using JSON
 
 ## 🛠️ Technologies Used
 
@@ -34,10 +40,10 @@ python app.py
 
 ## 🎯 Future Improvements
 
-* Study session tracking
-* Data persistence (JSON)
-* Progress analytics
-* Graphs using matplotlib
+* Study session tracking✅
+* Data persistence (JSON)✅
+* Progress analytics (In progress)
+* Graphs using matplotlib (Not yet started)
 
 ## 👩🏽‍💻 Author
 

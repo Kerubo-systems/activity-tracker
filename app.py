@@ -44,6 +44,100 @@ def load_data():
             sessions = json.load(s)
         with open("tasks.json", "r") as t:
             tasks= json.load(t)
+            
+def calculate_summary():
+    subject_totals = {}
+      
+    for session in sessions:
+       sub = session["subject"]
+       time = session["duration"]
+       
+       if sub not in subject_totals:
+           subject_totals[sub] = time
+       else:
+            subject_totals[sub] += time
+        
+    #TOTAL TIME
+    total_time = 0
+    
+    for session in sessions:
+        total_time += session["duration"]
+        
+        
+    #Today's time
+    total_today = 0
+    today_date = date.today().isoformat()
+    
+    for session in sessions:
+        
+        if session.get("date") == today_date:
+            total_today += session["duration"]
+            
+    #DATE TOTALS
+    date_totals = {}
+    
+    for session in sessions:
+        session_date = session.get("date")
+        duration = session['duration']
+        
+        if not session_date:
+            continue
+        
+        elif session_date not in date_totals:
+            date_totals[session_date] = duration
+        else:
+            date_totals[session_date] += duration
+    
+    return subject_totals, total_time, total_today, date_totals
+
+def performance_summary():
+    subject_totals, total_time, total_today, date_totals = calculate_summary()
+    
+    if not subject_totals:
+        print("No study data yet.")
+        return
+    
+    else:
+        best_subject = max(subject_totals, key = subject_totals.get)
+        best_day = max(date_totals, key=date_totals.get)
+    
+        print("PERFORMANCE SUMMARY")
+        print("-" * len("PERFORMANCE SUMMARY"))
+        print(f"Total time: {total_time} min.")
+        print(f"Today's time: {total_today} min.")
+        print(f"Best day: {best_day} ({date_totals[best_day]} min)")
+        print(f"Best subject: {best_subject} ({subject_totals[best_subject]} min)")
+        
+def export_report():
+    subject_totals, total_time, total_today, date_totals = calculate_summary()
+    
+    
+    with open("report.txt", "w") as f:
+        #write header
+        f.write("STUDY REPORT\n")
+        f.write("-" * 20 + "\n\n")
+        
+        #write totals
+        f.write(f"Total time: {total_time} min\n")
+        f.write(f"Today's time: {total_today} min\n\n")
+        
+        #best insights
+        if subject_totals:
+            best_subject = max(subject_totals, key = subject_totals.get)
+            
+        if date_totals:
+            best_day = max(date_totals, key=date_totals.get)
+            
+            f.write(f"Best day: {best_day} ({date_totals[best_day]} min)\n\n")
+            f.write(f"Best subject: {best_subject} ({subject_totals[best_subject]} min)\n\n\n")
+            
+        
+        #loop subjects
+        f.write("SUBJECT BREAKDOWN:\n\n")
+        for subject, time in subject_totals.items():
+            f.write(f"- {subject}: {time} min\n")
+    
+            
 
 def show_menu():
     while True:
@@ -56,9 +150,13 @@ def show_menu():
         print("5. View Study Summary")
         print("6. Delete Tasks")
         print("7. Delete Study Session")
-        print("8. Exit")
+        print("8. Performance Summary")
+        print("9. Show Graphs")
+        print("10. Export Report")
+        print("11. Exit")
         
         choice = int(input("Choose an option. "))
+        print("\n")
         
         
         if choice == 1:
@@ -131,19 +229,8 @@ def show_menu():
                 
             else:
                 #SUBJECT TOTALS
-                subject_totals = {}
+                subject_totals, total_time, total_today, date_totals = calculate_summary()
                 
-                
-                for session in sessions:
-                   sub = session["subject"]
-                   time = session["duration"]
-                  
-
-                   
-                   if sub not in subject_totals:
-                       subject_totals[sub] = time
-                   else:
-                        subject_totals[sub] += time
                     
                 for subject, time in sorted(subject_totals.items(), key = lambda x:x[1], reverse = True):
                     print(f"{subject}: {time} minutes")
@@ -151,11 +238,6 @@ def show_menu():
                     
                     
                 #TOTAL TIME
-                total_time = 0
-                
-                for session in sessions:
-                    total_time += session["duration"]
-                
                 print(f"Your total study time (all-time) was: {total_time} minutes")
                 
                 print("\n All Study Sessions:")
@@ -168,12 +250,7 @@ def show_menu():
                     
                     
                 #Today's time
-                total_today = 0
                 today_date = date.today().isoformat()
-                
-                for session in sessions:
-                    if session.get("date") == today_date:
-                        total_today += session["duration"]
                         
                 print(f"Total study time today was: {total_today} minutes.")
                 
@@ -228,15 +305,20 @@ def show_menu():
                
             save_data()
             
-            
         elif choice == 8:
+            performance_summary()
+            
+        elif choice == 10:
+            export_report()
+            
+            
+        elif choice == 11:
             save_data()
             print("Exiting...")
             break
         
         else:
             print("Invalid choice. Try again.")
-            
 
 
 load_data()
