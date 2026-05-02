@@ -1,18 +1,29 @@
 STUDY REPORT
 --------------------
 
-Total time: 185 min
-Today's time: 0 min
+OVERVIEW
+Total study time: 425 min
+Today's study time: 90 min
 
-Best day: 2026-04-29 (60 min)
+Best day: 2026-04-30 (150 min)
 
-Best subject: Math (70 min)
+Best subject: Math (110 min)
 
 
 SUBJECT BREAKDOWN:
-
-- Math: 70 min
+-----------------
+- Math: 110 min
+- Chem: 90 min
+- sst: 70 min
+- swa: 60 min
+- Biology: 55 min
 - Swahili: 40 min
-- swa: 40 min
-- sst: 10 min
-- Biology: 25 min
+
+DAILY BREAKDOWN
+---------------
+03/30/26: 10 min
+2026-03-30: 10 min
+2026-04-28: 25 min
+2026-04-29: 60 min
+2026-04-30: 150 min
+2026-05-02: 90 min

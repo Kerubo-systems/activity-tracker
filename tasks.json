@@ -1,7 +1,7 @@
 [
     {
         "title": "Drink water",
-        "completed": false
+        "completed": true
     },
     {
         "title": "Exercise",
@@ -9,6 +9,10 @@
     },
     {
         "title": "Run a mile",
+        "completed": true
+    },
+    {
+        "title": "Read a story",
         "completed": false
     }
 ]

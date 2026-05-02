@@ -36,5 +36,40 @@
         "subject": "Chem",
         "duration": 50,
         "date": "2026-04-30"
+    },
+    {
+        "subject": "Chem",
+        "duration": 40,
+        "date": "2026-04-30"
+    },
+    {
+        "subject": "sst",
+        "duration": 40,
+        "date": "2026-04-30"
+    },
+    {
+        "subject": "Math",
+        "duration": 20,
+        "date": "2026-04-30"
+    },
+    {
+        "subject": "Math",
+        "duration": 20,
+        "date": "2026-05-02"
+    },
+    {
+        "subject": "sst",
+        "duration": 20,
+        "date": "2026-05-02"
+    },
+    {
+        "subject": "swa",
+        "duration": 20,
+        "date": "2026-05-02"
+    },
+    {
+        "subject": "Biology",
+        "duration": 30,
+        "date": "2026-05-02"
     }
 ]
