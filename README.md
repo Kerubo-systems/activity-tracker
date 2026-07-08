@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
 Created on Sun Mar 22 15:28:21 2026
-
-@author: godfr
-"""
 
 # 📚 Smart Activity Tracker (CLI App)
 
